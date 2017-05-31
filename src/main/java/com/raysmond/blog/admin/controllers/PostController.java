@@ -2,16 +2,12 @@ package com.raysmond.blog.admin.controllers;
 
 import com.raysmond.blog.forms.PostForm;
 import com.raysmond.blog.models.Post;
-import com.raysmond.blog.models.Tag;
-import com.raysmond.blog.models.User;
 import com.raysmond.blog.models.support.PostFormat;
 import com.raysmond.blog.models.support.PostStatus;
 import com.raysmond.blog.repositories.PostRepository;
 import com.raysmond.blog.repositories.UserRepository;
 import com.raysmond.blog.services.PostService;
-import com.raysmond.blog.services.TagService;
 import com.raysmond.blog.utils.DTOUtil;
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,18 +18,12 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import javax.validation.Valid;
 import java.security.Principal;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
-/**
- * @author Raysmond<i@raysmond.com>
- */
 @Controller("adminPostController")
 @RequestMapping("admin/posts")
 public class PostController {
@@ -51,7 +41,8 @@ public class PostController {
 
     @RequestMapping(value = "")
     public String index(@RequestParam(defaultValue = "0") int page, Model model){
-        Page<Post> posts = postRepository.findAll(new PageRequest(page, PAGE_SIZE, Sort.Direction.DESC, "id"));
+        Page<Post> posts = postRepository.findAll(new PageRequest(page, PAGE_SIZE,
+                Sort.Direction.DESC, "id"));
 
         model.addAttribute("totalPages", posts.getTotalPages());
         model.addAttribute("page", page);

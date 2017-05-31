@@ -16,7 +16,8 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import static com.raysmond.blog.Constants.*;
+import static com.raysmond.blog.Constants.ENV_DEVELOPMENT;
+import static com.raysmond.blog.Constants.ENV_PRODUCTION;
 
 /**
  * @author Raysmond<i@raysmond.com>.

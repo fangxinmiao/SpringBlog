@@ -1,13 +1,11 @@
 package com.raysmond.blog.forms;
 
-import com.raysmond.blog.models.Tag;
 import com.raysmond.blog.models.support.PostFormat;
 import com.raysmond.blog.models.support.PostStatus;
 import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
-import java.util.Set;
 
 /**
  * @author Raysmond<i@raysmond.com>

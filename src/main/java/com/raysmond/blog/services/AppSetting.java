@@ -1,9 +1,8 @@
 package com.raysmond.blog.services;
 
-import com.raysmond.blog.services.SettingService;
+import com.domingosuarez.boot.autoconfigure.jade4j.JadeHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.domingosuarez.boot.autoconfigure.jade4j.JadeHelper;
 
 /**
  * @author Raysmond<i@raysmond.com>

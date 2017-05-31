@@ -1,30 +1,24 @@
-server:
-    port: 9000
-    contextPath:
+spring.profiles.active: dev
 
-spring:
-    profiles:
-        active: dev
+server.port: 9000
 
-    thymeleaf:
-        cache: false
+spring.datasource:
+    url: jdbc:mysql://localhost:3306/spring_blog?useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    username: devel
+    password: devel
 
-    jade4j:
-        caching: false
+spring.thymeleaf:
+    cache: false
 
-    dataSource:
-      driverClassName: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/spring_blog?serverTimezone=UTC
-      username: devel
-      password: devel
+spring.jade4j:
+    caching: false
 
-    hibernate:
-      dialect: org.hibernate.dialect.MySQLDialect
-      hbm2ddl.auto: update
-      show_sql: false
+spring.jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    #hbm2ddl.auto: update
 
-    redis:
-      host: localhost
-      port: 6379
-      default_expire_time: 86400
-
+spring.redis:
+    host: localhost
+    port: 6379

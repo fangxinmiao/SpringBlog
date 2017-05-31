@@ -1,10 +1,5 @@
 package com.raysmond.blog.services;
 
-import java.util.Collections;
-
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
 import com.raysmond.blog.Constants;
 import com.raysmond.blog.models.User;
 import com.raysmond.blog.repositories.UserRepository;
@@ -13,11 +8,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.*;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.*;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import java.util.Collections;
 
 public class UserService implements UserDetailsService {
 

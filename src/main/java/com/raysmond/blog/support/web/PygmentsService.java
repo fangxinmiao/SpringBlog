@@ -1,7 +1,7 @@
 package com.raysmond.blog.support.web;
 
-import org.springframework.stereotype.Service;
 import org.python.util.PythonInterpreter;
+import org.springframework.stereotype.Service;
 
 /**
  * @author Raysmond<i@raysmond.com>

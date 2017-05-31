@@ -1,6 +1,5 @@
 package com.raysmond.blog.controllers;
 
-import com.raysmond.blog.support.web.MessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;

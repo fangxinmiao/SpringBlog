@@ -3,8 +3,6 @@ package com.raysmond.blog.controllers;
 import com.raysmond.blog.error.NotFoundException;
 import com.raysmond.blog.models.Post;
 import com.raysmond.blog.models.Tag;
-import com.raysmond.blog.repositories.PostRepository;
-import com.raysmond.blog.repositories.TagRepository;
 import com.raysmond.blog.services.AppSetting;
 import com.raysmond.blog.services.PostService;
 import com.raysmond.blog.services.TagService;
@@ -14,11 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import static org.springframework.web.bind.annotation.RequestMethod.*;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-import java.util.Map;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 /**
  * @author Raysmond<i@raysmond.com>.
