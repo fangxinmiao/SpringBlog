@@ -1,6 +1,6 @@
 package com.raysmond.blog.controllers;
 
-import com.raysmond.blog.Constants;
+import com.raysmond.blog.config.Constants;
 import com.raysmond.blog.models.Post;
 import com.raysmond.blog.services.AppSetting;
 import com.raysmond.blog.services.PostService;

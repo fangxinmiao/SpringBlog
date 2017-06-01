@@ -1,6 +1,6 @@
 package com.raysmond.blog.services;
 
-import com.raysmond.blog.Constants;
+import com.raysmond.blog.config.Constants;
 import com.raysmond.blog.error.NotFoundException;
 import com.raysmond.blog.models.Post;
 import com.raysmond.blog.models.Tag;

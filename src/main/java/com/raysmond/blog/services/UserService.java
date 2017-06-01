@@ -1,6 +1,6 @@
 package com.raysmond.blog.services;
 
-import com.raysmond.blog.Constants;
+import com.raysmond.blog.config.Constants;
 import com.raysmond.blog.models.User;
 import com.raysmond.blog.repositories.UserRepository;
 import org.slf4j.Logger;

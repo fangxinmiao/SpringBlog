@@ -1,4 +1,4 @@
-package com.raysmond.blog;
+package com.raysmond.blog.config;
 
 import com.raysmond.blog.services.UserService;
 import org.springframework.context.annotation.Bean;

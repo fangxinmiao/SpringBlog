@@ -1,4 +1,4 @@
-package com.raysmond.blog;
+package com.raysmond.blog.config;
 
 import com.raysmond.blog.support.web.ViewHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +16,8 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import static com.raysmond.blog.Constants.ENV_DEVELOPMENT;
-import static com.raysmond.blog.Constants.ENV_PRODUCTION;
+import static com.raysmond.blog.config.Constants.ENV_DEVELOPMENT;
+import static com.raysmond.blog.config.Constants.ENV_PRODUCTION;
 
 /**
  * @author Raysmond

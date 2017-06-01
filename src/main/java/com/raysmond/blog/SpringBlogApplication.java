@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 // 开启缓存请把下行取消注释
 //@EnableCaching
-public class Application {
+public class SpringBlogApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(SpringBlogApplication.class, args);
     }
 }

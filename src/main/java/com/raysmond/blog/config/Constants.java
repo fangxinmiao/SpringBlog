@@ -1,4 +1,4 @@
-package com.raysmond.blog;
+package com.raysmond.blog.config;
 
 /**
  * @author: Raysmond
