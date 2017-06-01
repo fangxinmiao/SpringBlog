@@ -12,7 +12,7 @@ import java.io.Serializable;
 /**
  * A generic setting model
  *
- * @author Raysmond<i@raysmond.com>
+ * @author Raysmond
  */
 @Entity
 @Table(name = "settings")

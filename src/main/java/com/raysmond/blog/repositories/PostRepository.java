@@ -13,9 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * @author Raysmond<i@raysmond.com>
- */
 @Repository
 @Transactional
 public interface PostRepository extends JpaRepository<Post, Long> {

@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author Raysmond<i@raysmond.com>
+ * @author Raysmond
  */
 @SpringBootApplication
 // 开启缓存请把下行取消注释

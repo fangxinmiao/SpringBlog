@@ -4,14 +4,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * @author Raysmond<i@raysmond.com>
+ * @author Raysmond
  */
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
 public final class NotFoundException extends RuntimeException {
     private String message;
 
     public NotFoundException(){
-
     }
 
     public NotFoundException(String message){

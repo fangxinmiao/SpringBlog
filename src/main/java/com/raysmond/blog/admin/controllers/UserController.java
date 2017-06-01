@@ -19,7 +19,7 @@ import javax.validation.Valid;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
- * @author Raysmond<i@raysmond.com>.
+ * @author Raysmond
  */
 @Controller("adminUserController")
 @RequestMapping("admin/users")
@@ -48,12 +48,10 @@ public class UserController {
 
         if (errors.hasErrors()){
             // do something
-
             return "admin/users/profile";
         }
 
-        if (!userForm.getNewPassword().isEmpty()){
-
+        if (!userForm.getNewPassword().isEmpty()) {
             if (!userService.changePassword(user, userForm.getPassword(), userForm.getNewPassword()))
                 MessageHelper.addErrorAttribute(ra, "Change password failed.");
             else

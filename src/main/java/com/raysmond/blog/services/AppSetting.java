@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author Raysmond<i@raysmond.com>
+ * @author Raysmond
  */
 @JadeHelper("App")
 @Service

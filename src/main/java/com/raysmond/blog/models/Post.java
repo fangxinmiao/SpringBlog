@@ -13,9 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * @author Raysmond<i@raysmond.com>
- */
 @Entity
 @Table(name = "posts")
 @Getter @Setter
@@ -66,5 +63,4 @@ public class Post extends BaseModel{
         String token = permalink.toLowerCase().replace("\n", " ").replaceAll("[^a-z\\d\\s]", " ");
         this.permalink = StringUtils.arrayToDelimitedString(StringUtils.tokenizeToStringArray(token, " "), "-");
     }
-
 }

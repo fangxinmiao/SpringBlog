@@ -20,7 +20,7 @@ import static com.raysmond.blog.Constants.ENV_DEVELOPMENT;
 import static com.raysmond.blog.Constants.ENV_PRODUCTION;
 
 /**
- * @author Raysmond<i@raysmond.com>.
+ * @author Raysmond
  */
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {

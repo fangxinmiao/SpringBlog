@@ -1,7 +1,7 @@
 package com.raysmond.blog.models.support;
 
 /**
- * @author Raysmond<i@raysmond.com>
+ * @author Raysmond
  */
 public enum PostFormat {
     HTML("Html"),

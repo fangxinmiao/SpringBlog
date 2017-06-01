@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Raysmond<i@raysmond.com>
+ * @author Raysmond
  */
 public class DTOUtil {
 

@@ -7,9 +7,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Raysmond<i@raysmond.com>.
- */
 @Entity
 @Table(name = "tags")
 @Getter @Setter

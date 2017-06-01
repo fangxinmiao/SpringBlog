@@ -3,7 +3,7 @@ package com.raysmond.blog.services;
 import java.io.Serializable;
 
 /**
- * @author Raysmond<i@raysmond.com>
+ * @author Raysmond
  */
 public interface SettingService {
     Serializable get(String key);

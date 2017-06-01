@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * @author Raysmond<i@raysmond.com>.
+ * @author Raysmond
  */
 @Service
 public class PostService {
