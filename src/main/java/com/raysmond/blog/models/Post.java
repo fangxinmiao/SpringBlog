@@ -16,32 +16,35 @@ import java.util.Set;
 @Entity
 @Table(name = "posts")
 @Getter @Setter
-public class Post extends BaseModel{
+public class Post extends BaseModel {
     private static final SimpleDateFormat SLUG_DATE_FORMAT = new SimpleDateFormat("yyyy/MM/dd");
 
-    @ManyToOne
-    private User user;
-
-    @Column(nullable = false)
+    @Column(length = 255, nullable = false)
     private String title;
 
-    @Type(type="text")
+    @Type(type = "text")
     private String content;
 
     @Type(type = "text")
     private String renderedContent;
 
-    @Column(nullable = false)
+    @Column(length = 255)
+    private String permalink;
+
+    @Column(length = 16, nullable = false)
     @Enumerated(EnumType.STRING)
     private PostStatus postStatus = PostStatus.PUBLISHED;
 
-    @Column(nullable = false)
+    @Column(length = 16, nullable = false)
     @Enumerated(EnumType.STRING)
     private PostFormat postFormat = PostFormat.MARKDOWN;
 
-    @Column(nullable = false)
+    @Column(length = 16, nullable = false)
     @Enumerated(EnumType.STRING)
     private PostType postType = PostType.POST;
+
+    @ManyToOne
+    private User user;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "posts_tags",
@@ -50,16 +53,13 @@ public class Post extends BaseModel{
     )
     private Set<Tag> tags = new HashSet<>();
 
-    private String permalink;
-
     public String getRenderedContent() {
         if (this.postFormat == PostFormat.MARKDOWN)
             return renderedContent;
-
         return getContent();
     }
 
-    public void setPermalink(String permalink){
+    public void setPermalink(String permalink) {
         String token = permalink.toLowerCase().replace("\n", " ").replaceAll("[^a-z\\d\\s]", " ");
         this.permalink = StringUtils.arrayToDelimitedString(StringUtils.tokenizeToStringArray(token, " "), "-");
     }

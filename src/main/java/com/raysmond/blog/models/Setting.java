@@ -18,11 +18,10 @@ import java.io.Serializable;
 @Table(name = "settings")
 @Getter @Setter
 public class Setting extends BaseModel{
-    @Column(name = "_key", unique = true, nullable = false)
+    @Column(length = 32, name = "property", unique = true, nullable = false)
     private String key;
 
     @Lob
-    @Column(name = "_value")
+    @Column(name = "val")
     private Serializable value;
-
 }

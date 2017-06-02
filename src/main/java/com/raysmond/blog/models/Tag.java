@@ -12,17 +12,12 @@ import java.util.List;
 @Getter @Setter
 public class Tag extends BaseModel {
 
-    @Column(nullable = false, unique = true)
+    public Tag(){}
+    public Tag(String name){ this.setName(name); }
+
+    @Column(length = 64, nullable = false, unique = true)
     private String name;
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "tags")
     private List<Post> posts = new ArrayList<>();
-
-    public Tag(){
-
-    }
-
-    public Tag(String name){
-        this.setName(name);
-    }
 }

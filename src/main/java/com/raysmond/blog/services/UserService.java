@@ -44,10 +44,9 @@ public class UserService implements UserDetailsService {
     public User getSuperUser(){
         User user = userRepository.findByEmail(Constants.DEFAULT_ADMIN_EMAIL);
 
-        if ( user == null) {
+        if (user == null) {
             user = createUser(new User(Constants.DEFAULT_ADMIN_EMAIL, Constants.DEFAULT_ADMIN_PASSWORD, User.ROLE_ADMIN));
         }
-
         return user;
     }
 
@@ -67,7 +66,6 @@ public class UserService implements UserDetailsService {
         }
 
         String email = ((org.springframework.security.core.userdetails.User) auth.getPrincipal()).getUsername();
-
         return userRepository.findByEmail(email);
     }
 
@@ -84,7 +82,6 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
 
         logger.info("User @"+user.getEmail() + " changed password.");
-
         return true;
     }
 
@@ -106,5 +103,4 @@ public class UserService implements UserDetailsService {
     private GrantedAuthority createAuthority(User user) {
         return new SimpleGrantedAuthority(user.getRole());
     }
-
 }
