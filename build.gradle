@@ -29,7 +29,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-security'
 
     // persistence
-    compile 'mysql:mysql-connector-java:+'
+    compile 'mysql:mysql-connector-java'
 
     // view
     compile "com.domingosuarez.boot:spring-boot-starter-jade4j:0.3.1"
