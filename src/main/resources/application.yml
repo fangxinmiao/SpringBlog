@@ -7,10 +7,8 @@ spring.datasource:
     username: devel
     password: devel
 
+spring.jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+
 spring.jade4j:
     caching: false
-
-spring.jpa:
-    show-sql: true
-    hibernate.ddl-auto: update
-    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
