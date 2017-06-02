@@ -30,33 +30,36 @@ import java.util.Set;
  */
 @Service
 public class PostService {
-    @Autowired
-    private PostRepository postRepository;
-
-    @Autowired
-    private TagService tagService;
-
-    @Autowired
-    private UserService userService;
-
-    public static final String CACHE_NAME = "cache.post";
-    public static final String CACHE_NAME_ARCHIVE = CACHE_NAME + ".archive";
-    public static final String CACHE_NAME_PAGE = CACHE_NAME + ".page";
-    public static final String CACHE_NAME_TAGS = CACHE_NAME + ".tag";
-    public static final String CACHE_NAME_COUNTS = CACHE_NAME + ".counts_tags";
 
     private static final Logger logger = LoggerFactory.getLogger(PostService.class);
+
+    private static final String CACHE_NAME = "cache.post";
+    private static final String CACHE_NAME_ARCHIVE = CACHE_NAME + ".archive";
+    private static final String CACHE_NAME_PAGE = CACHE_NAME + ".page";
+    private static final String CACHE_NAME_TAGS = CACHE_NAME + ".tag";
+    private static final String CACHE_NAME_COUNTS = CACHE_NAME + ".counts_tags";
+
+    private final PostRepository postRepository;
+    private final TagService tagService;
+    private final UserService userService;
+
+    @Autowired
+    public PostService(PostRepository postRepository,
+                       TagService tagService,
+                       UserService userService) {
+        this.postRepository = postRepository;
+        this.tagService = tagService;
+        this.userService = userService;
+    }
 
     @Cacheable(CACHE_NAME)
     public Post getPost(Long postId) {
         logger.debug("Get post " + postId);
 
         Post post = postRepository.findOne(postId);
-
         if (post == null) {
             throw new NotFoundException("Post with id " + postId + " is not found.");
         }
-
         return post;
     }
 
@@ -65,11 +68,9 @@ public class PostService {
         logger.debug("Get post with permalink " + permalink);
 
         Post post = postRepository.findByPermalinkAndPostStatus(permalink, PostStatus.PUBLISHED);
-
         if (post == null) {
             throw new NotFoundException("Post with permalink '" + permalink + "' is not found.");
         }
-
         return post;
     }
 
@@ -82,7 +83,6 @@ public class PostService {
         if (post.getPostFormat() == PostFormat.MARKDOWN) {
             post.setRenderedContent(Markdown.markdownToHtml(post.getContent()));
         }
-
         return postRepository.save(post);
     }
 
@@ -98,7 +98,6 @@ public class PostService {
         if (post.getPostFormat() == PostFormat.MARKDOWN) {
             post.setRenderedContent(Markdown.markdownToHtml(post.getContent()));
         }
-
         return postRepository.save(post);
     }
 

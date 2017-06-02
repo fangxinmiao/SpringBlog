@@ -6,7 +6,7 @@ public enum PostType {
 
     private String name;
 
-    PostType(String name){
+    PostType(String name) {
         this.name = name;
     }
 
@@ -18,7 +18,7 @@ public enum PostType {
         this.name = name;
     }
 
-    public String getId(){
+    public String getId() {
         return name();
     }
 

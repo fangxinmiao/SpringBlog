@@ -11,41 +11,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
-
 /**
  * @author Raysmond
  */
 @Controller
 @RequestMapping("posts")
 public class PostController {
+
+    private final PostService postService;
+
     @Autowired
-    private PostService postService;
+    public PostController(PostService postService) {
+        this.postService = postService;
+    }
 
     @RequestMapping(value = "archive", method = GET)
-    public String archive(Model model){
+    public String archive(Model model) {
         model.addAttribute("posts", postService.getArchivePosts());
-
         return "posts/archive";
     }
 
     @RequestMapping(value = "{permalink}", method = GET)
-    public String show(@PathVariable String permalink, Model model){
+    public String show(@PathVariable String permalink, Model model) {
         Post post = null;
-
-        try{
+        try {
             post = postService.getPublishedPostByPermalink(permalink);
-        } catch (NotFoundException ex){
-            if (permalink.matches("\\d+"))
+        } catch (NotFoundException ex) {
+            if (permalink.matches("\\d+")) {
                 post = postService.getPost(Long.valueOf(permalink));
+            }
         }
-
-        if (post == null)
+        if (post == null) {
             throw new NotFoundException("Post with permalink " + permalink + " is not found");
+        }
 
         model.addAttribute("post", post);
         model.addAttribute("tags", postService.getPostTags(post));
-
         return "posts/show";
     }
-
 }

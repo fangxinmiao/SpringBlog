@@ -37,7 +37,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     }
 
     @PostConstruct
-    public void registerJadeViewHelpers(){
+    public void registerJadeViewHelpers() {
         viewHelper.setApplicationEnv(this.getApplicationEnv());
     }
 
@@ -61,7 +61,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         };
     }
 
-    public String getApplicationEnv(){
+    public String getApplicationEnv() {
         return this.env.acceptsProfiles(ENV_PRODUCTION) ? ENV_PRODUCTION : ENV_DEVELOPMENT;
     }
 }

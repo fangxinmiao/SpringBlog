@@ -13,12 +13,14 @@ import java.util.Collection;
  */
 @Entity
 @Table(name = "users")
-@Getter @Setter
-public class User extends BaseModel{
+@Getter
+@Setter
+public class User extends BaseModel {
     public static final String ROLE_ADMIN = "ROLE_ADMIN";
-    public static final String ROLE_USER  = "ROLE_USER";
+    public static final String ROLE_USER = "ROLE_USER";
 
-    public User() {}
+    public User() {
+    }
 
     public User(String email, String password, String role) {
         this.email = email;

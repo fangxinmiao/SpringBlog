@@ -16,28 +16,29 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @Controller
 public class HomeController {
 
-    @Autowired
-    private PostService postService;
+    private final PostService postService;
+    private final AppSetting appSetting;
 
     @Autowired
-    private AppSetting appSetting;
+    public HomeController(PostService postService, AppSetting appSetting) {
+        this.postService = postService;
+        this.appSetting = appSetting;
+    }
 
     @RequestMapping(value = "", method = GET)
     public String index(@RequestParam(defaultValue = "1") int page, Model model) {
-        page = page < 1 ? 0 : page - 1;
+        page = (page < 1) ? 0 : page - 1;
         Page<Post> posts = postService.getAllPublishedPostsByPage(page, appSetting.getPageSize());
 
         model.addAttribute("totalPages", posts.getTotalPages());
         model.addAttribute("posts", posts);
         model.addAttribute("page", page + 1);
-
         return "home/index";
     }
 
     @RequestMapping(value = "about", method = GET)
     public String about(Model model) {
         Post post = postService.getPublishedPostByPermalink(Constants.ABOUT_PAGE_PERMALINK);
-
         if (post == null) {
             post = postService.createAboutPage();
         }
@@ -45,5 +46,4 @@ public class HomeController {
         model.addAttribute("about", post);
         return "home/about";
     }
-
 }

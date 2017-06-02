@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 /**
  * @author Raysmond
  */
@@ -23,13 +24,13 @@ public class ViewHelper {
     private String applicationEnv;
 
     @Autowired
-    public ViewHelper(AppSetting appSetting){
+    public ViewHelper(AppSetting appSetting) {
         this.appSetting = appSetting;
     }
 
     private long startTime;
 
-    public long getResponseTime(){
+    public long getResponseTime() {
         return System.currentTimeMillis() - startTime;
     }
 
@@ -41,15 +42,15 @@ public class ViewHelper {
         this.startTime = startTime;
     }
 
-    public String getFormattedDate(Date date){
+    public String getFormattedDate(Date date) {
         return date == null ? "" : DATE_FORMAT.format(date);
     }
 
-    public String getMonthAndDay(Date date){
+    public String getMonthAndDay(Date date) {
         return date == null ? "" : DATE_FORMAT_MONTH_DAY.format(date);
     }
 
-    public String metaTitle(String title){
+    public String metaTitle(String title) {
         return title + " · " + appSetting.getSiteName();
     }
 

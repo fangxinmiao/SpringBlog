@@ -9,11 +9,16 @@ import java.util.List;
 
 @Entity
 @Table(name = "tags")
-@Getter @Setter
+@Getter
+@Setter
 public class Tag extends BaseModel {
 
-    public Tag(){}
-    public Tag(String name){ this.setName(name); }
+    public Tag() {
+    }
+
+    public Tag(String name) {
+        this.setName(name);
+    }
 
     @Column(length = 64, nullable = false, unique = true)
     private String name;

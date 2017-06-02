@@ -15,7 +15,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "posts")
-@Getter @Setter
+@Getter
+@Setter
 public class Post extends BaseModel {
     private static final SimpleDateFormat SLUG_DATE_FORMAT = new SimpleDateFormat("yyyy/MM/dd");
 

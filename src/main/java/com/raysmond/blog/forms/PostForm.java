@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 public class PostForm {
+
     @NotEmpty
     private String title;
 
@@ -29,5 +30,4 @@ public class PostForm {
 
     @NotNull
     private String postTags;
-
 }

@@ -13,8 +13,8 @@ public class DTOUtil {
 
     private static ModelMapper MAPPER = null;
 
-    private static ModelMapper getMapper(){
-        if(MAPPER == null){
+    private static ModelMapper getMapper() {
+        if (MAPPER == null) {
             MAPPER = new ModelMapper();
             MAPPER.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         }

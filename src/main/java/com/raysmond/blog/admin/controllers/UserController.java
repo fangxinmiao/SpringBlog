@@ -29,24 +29,24 @@ public class UserController {
     private UserRepository userRepository;
 
     @Autowired
-    public UserController(UserService userService, UserRepository userRepository){
+    public UserController(UserService userService, UserRepository userRepository) {
         this.userService = userService;
         this.userRepository = userRepository;
     }
 
     @RequestMapping("profile")
-    public String profile(Model model){
+    public String profile(Model model) {
         model.addAttribute("user", userService.currentUser());
 
         return "admin/users/profile";
     }
 
     @RequestMapping(value = "{userId:[0-9]+}", method = POST)
-    public String update(@PathVariable Long userId, @Valid UserForm userForm, Errors errors, RedirectAttributes ra){
+    public String update(@PathVariable Long userId, @Valid UserForm userForm, Errors errors, RedirectAttributes ra) {
         User user = userRepository.findOne(userId);
         Assert.notNull(user);
 
-        if (errors.hasErrors()){
+        if (errors.hasErrors()) {
             // do something
             return "admin/users/profile";
         }

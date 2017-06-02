@@ -9,7 +9,7 @@ public enum PostStatus {
 
     private String name;
 
-    PostStatus(String name){
+    PostStatus(String name) {
         this.name = name;
     }
 
@@ -21,7 +21,7 @@ public enum PostStatus {
         this.name = name;
     }
 
-    public String getId(){
+    public String getId() {
         return name();
     }
 

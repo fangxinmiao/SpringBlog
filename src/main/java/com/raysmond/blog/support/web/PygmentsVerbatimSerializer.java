@@ -16,5 +16,4 @@ public class PygmentsVerbatimSerializer implements VerbatimSerializer {
     public void serialize(final VerbatimNode node, final Printer printer) {
         printer.print(syntaxHighlightService.highlight(node.getText()));
     }
-
 }

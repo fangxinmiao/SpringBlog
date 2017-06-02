@@ -17,7 +17,9 @@ import java.io.Serializable;
 @Service
 public class CacheSettingService implements SettingService {
 
-    private SettingRepository settingRepository;
+    private static final Logger logger = LoggerFactory.getLogger(SettingService.class);
+
+    private final SettingRepository settingRepository;
 
     private static final String CACHE_NAME = "cache.settings";
 
@@ -25,8 +27,6 @@ public class CacheSettingService implements SettingService {
     public CacheSettingService(SettingRepository settingRepository) {
         this.settingRepository = settingRepository;
     }
-
-    private static final Logger logger = LoggerFactory.getLogger(SettingService.class);
 
     @Override
     public Serializable get(String key) {
@@ -39,7 +39,6 @@ public class CacheSettingService implements SettingService {
         }
 
         logger.info("Get setting " + key + " from database. Value = " + value);
-
         return value;
     }
 
@@ -64,7 +63,6 @@ public class CacheSettingService implements SettingService {
             setting.setValue(value);
             settingRepository.save(setting);
         } catch (Exception ex) {
-            
             logger.info("Cannot save setting value with type: " + value.getClass() + ". key = " + key);
         }
     }

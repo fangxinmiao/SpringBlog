@@ -17,16 +17,16 @@ public class AppSetting {
     private String siteSlogan = "An interesting place to discover";
     private Integer pageSize = 5;
 
-    public static final String SITE_NAME = "site_name";
-    public static final String SITE_SLOGAN = "site_slogan";
-    public static final String PAGE_SIZE = "page_size";
+    private static final String SITE_NAME = "site_name";
+    private static final String SITE_SLOGAN = "site_slogan";
+    private static final String PAGE_SIZE = "page_size";
 
     @Autowired
-    public AppSetting(SettingService settingService){
+    public AppSetting(SettingService settingService) {
         this.settingService = settingService;
     }
 
-    public String getSiteName(){
+    public String getSiteName() {
         return (String) settingService.get(SITE_NAME, siteName);
     }
 

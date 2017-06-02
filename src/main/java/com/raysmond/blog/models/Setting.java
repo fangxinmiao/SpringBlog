@@ -16,8 +16,9 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "settings")
-@Getter @Setter
-public class Setting extends BaseModel{
+@Getter
+@Setter
+public class Setting extends BaseModel {
     @Column(length = 32, name = "property", unique = true, nullable = false)
     private String key;
 

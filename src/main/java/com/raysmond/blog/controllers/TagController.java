@@ -32,7 +32,7 @@ public class TagController {
     private AppSetting appSetting;
 
     @RequestMapping(value = "", method = GET)
-    public String index(Model model){
+    public String index(Model model) {
         model.addAttribute("tags", postService.countPostsByTags());
         return "tags/index";
     }

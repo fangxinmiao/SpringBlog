@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 public class SettingsForm {
+
     @NotEmpty
     @NotNull
     private String siteName;
@@ -19,5 +20,4 @@ public class SettingsForm {
 
     @NotNull
     private Integer pageSize;
-
 }

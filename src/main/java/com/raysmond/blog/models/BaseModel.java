@@ -26,12 +26,12 @@ public abstract class BaseModel implements Comparable<BaseModel>, Serializable {
     private Date updatedAt;
 
     @PrePersist
-    public void prePersist(){
+    public void prePersist() {
         createdAt = updatedAt = new Date();
     }
 
     @PreUpdate
-    public void preUpdate(){
+    public void preUpdate() {
         updatedAt = new Date();
     }
 
@@ -43,22 +43,19 @@ public abstract class BaseModel implements Comparable<BaseModel>, Serializable {
     public boolean equals(Object other) {
         if (other == null || other.getClass() != this.getClass())
             return false;
-
         return this.getId().equals(((BaseModel) other).getId());
     }
-
 
     public int hashCode() {
         return new HashCodeBuilder().append(getId()).toHashCode();
     }
 
-
     public Long getId() {
         return id;
     }
 
-    public void setId(Long _id) {
-        id = _id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Date getCreatedAt() {
@@ -76,5 +73,4 @@ public abstract class BaseModel implements Comparable<BaseModel>, Serializable {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
-
 }
