@@ -1,4 +1,4 @@
-spring.profiles.active: dev
+spring.profiles.active: devel
 
 server.port: 9000
 
@@ -7,9 +7,6 @@ spring.datasource:
     username: devel
     password: devel
 
-spring.thymeleaf:
-    cache: false
-
 spring.jade4j:
     caching: false
 
@@ -17,8 +14,3 @@ spring.jpa:
     show-sql: true
     hibernate.ddl-auto: update
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
-    #hbm2ddl.auto: update
-
-spring.redis:
-    host: localhost
-    port: 6379
