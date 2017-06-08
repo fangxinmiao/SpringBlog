@@ -12,3 +12,7 @@ spring.jpa:
 
 spring.jade4j:
     caching: false
+
+spring.redis:
+    host: localhost
+    port: 6379
