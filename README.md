@@ -74,7 +74,9 @@ gradle bootRun
 
 ## Deployment
 
-- Build application jar `gradle build`, then upload the distribution jar 
+- Install resources via bower `bower install`.
+
+- Build application jar `gradle clean build`, then upload the distribution jar 
   (e.g. `build/libs/SpringBlog-1.0.0.jar`) to your remote server.
 - Run it (Java8 is a must)
 
