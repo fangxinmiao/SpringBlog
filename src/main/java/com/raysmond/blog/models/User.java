@@ -16,8 +16,8 @@ import java.util.Collection;
 @Getter
 @Setter
 public class User extends BaseModel {
-    public static final String ROLE_ADMIN = "ROLE_ADMIN";
-    public static final String ROLE_USER = "ROLE_USER";
+    public static final String ROLE_ADMIN = "Admin";
+    public static final String ROLE_USER = "User";
 
     public User() {
     }
@@ -32,7 +32,7 @@ public class User extends BaseModel {
     private String email;
 
     @JsonIgnore
-    @Column(length = 128, unique = true)
+    @Column(length = 128)
     private String password;
 
     @Column(length = 16)
